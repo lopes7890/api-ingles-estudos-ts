@@ -1,0 +1,14 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model palavras {
+  id        Int     @id @default(autoincrement())
+  portugues String? @db.VarChar(30)
+  ingles    String? @db.VarChar(30)
+}
